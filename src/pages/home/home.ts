@@ -9,7 +9,11 @@ export class HomePage {
    playlistItems:Array<any> = [];
 
    constructor (public navCtrl:NavController , private fbDbProvider:DatabaseServiceProvider) {
+
+      this.fbDbProvider.addData({"title":"Hai con nai","url":"xxxx"});
+
       const data = this.fbDbProvider.getData ().valueChanges ().toPromise();
       console.log (data);
+
    }
 }
