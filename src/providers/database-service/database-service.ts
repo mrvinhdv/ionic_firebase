@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import * as firebase from  "firebase/app";
 //import { Observable } from "rxjs/Observable";
 /*
  Generated class for the DatabaseServiceProvider provider.
@@ -34,8 +35,4 @@ export class DatabaseServiceProvider {
     this.afFB.list('/playLists').remove(id);
   }
 
-  /**
-   * @inheritdoc
-   */
-  
 }

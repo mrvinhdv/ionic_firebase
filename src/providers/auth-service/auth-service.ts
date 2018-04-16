@@ -13,6 +13,7 @@ export class AuthServiceProvider {
 
   constructor( public afAuth:AngularFireAuth ) {
     afAuth.authState.subscribe(user=> {
+      console.log(user);
       this.user = user;
     })
   }
@@ -34,6 +35,18 @@ export class AuthServiceProvider {
    */
   public signInWithEmail( credentials ) {
     return this.afAuth.auth.signInWithEmailAndPassword(credentials.email , credentials.password);
+  }
+
+  /**
+   * @inheritdoc
+   */
+
+  public updateInfo( fields:any ) {
+    return this.afAuth.auth.currentUser.updateProfile(fields).then(( user )=> {
+      console.log(user);
+    }).catch(err=> {
+      console.log(err)
+    });
   }
 
   /**
@@ -80,7 +93,7 @@ export class AuthServiceProvider {
   /**
    * @inheritdoc
    */
-  get authenticated():boolean {
+  authenticated():boolean {
     return this.user !== null;
   }
 

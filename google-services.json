@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "855378024205",
+    "firebase_url": "https://fir-frirebase.firebaseio.com",
+    "project_id": "fir-frirebase",
+    "storage_bucket": "fir-frirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855378024205:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855378024205-fb3im9aetfeblmbuojb9m84hvt290q7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxwydiK4Ky7wmtPj7jtq4sar4JGFI6-aM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
