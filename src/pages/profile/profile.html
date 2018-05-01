@@ -17,6 +17,19 @@
 
 
 <ion-content padding>
-  <button ion-button (click)="uploadAvatar()">Lets take a picture!</button>
-  <img [src]="captureDataUrl"  *ngIf="captureDataUrl"/>
+  <div align="center">
+    <h1> Profile</h1>
+    <img class="profile-image" [src]="auth.getAvatar()">
+  </div>
+
+  <ion-list>
+    <button ion-item (click)="cancelAccount()">
+      <ion-icon name="close-circle" item-start></ion-icon>
+      Close Account
+    </button>
+    <button ion-item (click)="logOut()">
+      <ion-icon name="log-out" item-start></ion-icon>
+      Log Out
+    </button>
+  </ion-list>
 </ion-content>

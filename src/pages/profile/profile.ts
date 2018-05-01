@@ -16,16 +16,17 @@ import {AuthServiceProvider} from "../../providers/auth-service/auth-service";
 export class ProfilePage {
   captureDataUrl:any;
   loading:any;
+  user:any;
 
   constructor( public navCtrl:NavController ,
                public navParams:NavParams ,
                public cameraProvider:ImageProvider ,
                private loadCtrl:LoadingController ,
-               private authProvider:AuthServiceProvider ) {
+               public auth:AuthServiceProvider ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    //this.getUser();
   }
 
   /**
@@ -39,8 +40,7 @@ export class ProfilePage {
         const fields = {
           photoURL: snapshot.downloadURL
         };
-        this.authProvider.updateInfo(fields).then(( res )=> {
-          console.log('============>' , res);
+        this.auth.updateInfo(fields).then(( res )=> {
         });
         //close loading
         this.loading.dismiss();
@@ -59,5 +59,11 @@ export class ProfilePage {
       content: 'Please wait...'
     });
     this.loading.present();
+  }
+  /**
+   * @inheritdoc
+   */
+  async cancelAccount() {
+    this.auth.cancelAccount();
   }
 }

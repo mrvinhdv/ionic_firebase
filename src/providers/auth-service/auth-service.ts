@@ -103,4 +103,18 @@ export class AuthServiceProvider {
   public getEmail() {
     return this.user && this.user.email;
   }
+
+  /**
+   * @inheritdoc
+   */
+  public getAvatar() {
+    return this.user && this.user.photoURL;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public cancelAccount() {
+    return this.user.delete();
+  }
 }
